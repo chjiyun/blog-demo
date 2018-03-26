@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>Demo-3-25-01</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            position: relative;
+        }
+        .container {
+            position: absolute;
+            width: 800px;
+            height: 250px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            align-items: center;
+            background: rgba(237, 209, 196, 0.6);
+            border-radius: 50%;
+        }
+        .rotate-img-list {
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .rotate-img-list > li {
+            list-style: none;
+            height: 120px;
+            width: 120px;
+            cursor: pointer;
+            position: relative;
+        }
+        .rotate-img-list > li img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+        }
+        .rotate-img-list > li .front,
+        .rotate-img-list > li .back {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 120px;
+            width: 120px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: solid 3px #5ddea9;
+            box-shadow: 0 3px 10px #999;
+            transition: all 400ms ease-in;
+            transform-style: preserve-3d;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            /* 定义当元素不面向屏幕时不可见 */
+        }
+        .rotate-img-list .front {
+            transform: rotateY(0deg);
+            z-index: 2;
+        }
+        .rotate-img-list .back {
+            transform: rotateY(180deg);
+            z-index: 1;
+        }
+        .rotate-img-list .cover {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            /* 不需设置z-index，后面的元素默认层级比前面的高 */
+            background-color: #000;
+            border-radius: 50%;
+            opacity: .65;
+            pointer-events: none;
+        }
+        .rotate-img-list .stars-info {
+            position: absolute;
+            top: 0;
+            width: 114px;
+            height: 114px;
+            line-height: 22px;
+            padding-top: 45px;
+            text-align: center;
+            color: #fff;
+            background: transparent;
+            border-radius: 50%;
+        }
+        /* 转到背面,并调整元素层级 */
+        .rotate-img-list li:hover .front {
+            transform: rotateY(180deg);
+            z-index: 1;
+        }
+        /* 转到正面,并调整元素层级 */
+        .rotate-img-list li:hover .back {
+            transform: rotateY(0deg);
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <ul class="rotate-img-list">
+        <li>
+            <div class="front"><img src="https://i.loli.net/2018/03/25/5ab785fe9bc78.jpg" /></div>
+            <div class="back">
+                <img src="https://i.loli.net/2018/03/25/5ab785fe9bc78.jpg" />
+                <div class="cover"></div>
+                <div class="stars-info">
+                    Backface
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="front"><img src="https://i.loli.net/2018/03/25/5ab785fe9bc78.jpg" /></div>
+            <div class="back">
+                <img src="https://i.loli.net/2018/03/25/5ab785fe9bc78.jpg" />
+                <div class="cover"></div>
+                <div class="stars-info">
+                    Backface
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="front"><img src="https://i.loli.net/2018/03/25/5ab785fe9bc78.jpg" /></div>
+            <div class="back">
+                <img src="https://i.loli.net/2018/03/25/5ab785fe9bc78.jpg" />
+                <div class="cover"></div>
+                <div class="stars-info">
+                    Backface
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
