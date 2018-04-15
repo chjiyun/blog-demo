@@ -1,0 +1,36 @@
+{
+	"code": 0,
+	"data":[
+		{
+			"name": "Lily",
+			"total_amount": 1
+		},{
+			"name": "Shane",
+			"total_amount": 2
+		},{
+			"name": "Sunshine",
+			"total_amount": 8
+		},{
+			"name": "Moon",
+			"total_amount": 10
+		},{
+			"name": "Meton",
+			"total_amount": 6
+		},{
+			"name": "Huton",
+			"total_amount": 12
+		},{
+			"name": "Ryan",
+			"total_amount": 4
+		},{
+			"name": "Ryan",
+			"total_amount": 4
+		},{
+			"name": "Cyan",
+			"total_amount": 5
+		},{
+			"name": "Huston",
+			"total_amount": 3
+		}
+	]
+}
