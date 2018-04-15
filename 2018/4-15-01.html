@@ -153,7 +153,7 @@
         }
 
         function getData() {
-            d3.json("/data/bubble.json", function(err, data) {
+            d3.json("../data/bubble.json", function(err, data) {
                 if (err) throw err;
 
                 init(data.data);
