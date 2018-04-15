@@ -84,10 +84,10 @@
              * @param {Object} source
              */
             function createNodes(source) {
-                var root = d3.hierarchy({ children: source })
+                var ori = d3.hierarchy({ children: source })
                     .sum(d => d.total_amount);
 
-                var rootData = pack(root).leaves().map((d, i) => {
+                var rootData = pack(ori).leaves().map((d, i) => {
                     var data = d.data;
                     var color = scaleColor(data.name);
                     return {
